@@ -8,7 +8,8 @@ public class Calculator {
         int comb = 0, tmp;
         for(int i = 0; i < numbers.length; i++) {
             tmp = Integer.parseInt(numbers[i]);
-            comb += tmp;
+            if(tmp <= 1000)
+                comb += tmp;
         }
         return comb;
     }
