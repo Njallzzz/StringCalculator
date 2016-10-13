@@ -1,3 +1,5 @@
+#!/bin/bash
+
 rm -rf classes/* &&
 javac src/main/*.java -d classes &&
 javac -classpath "classes/;lib/junit-4.12.jar" src/test/*.java -d classes &&
