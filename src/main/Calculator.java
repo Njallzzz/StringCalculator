@@ -4,10 +4,11 @@ public class Calculator {
     public static int add(String text) {
         if(text.equals(""))
             return 0;
-        String[] numbers = text.split(",");
-        int comb = 0;
+        String[] numbers = text.replace("\n", ",").split(",");
+        int comb = 0, tmp;
         for(int i = 0; i < numbers.length; i++) {
-            comb += Integer.parseInt(numbers[i]);
+            tmp = Integer.parseInt(numbers[i]);
+            comb += tmp;
         }
         return comb;
     }
