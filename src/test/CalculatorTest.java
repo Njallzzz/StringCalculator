@@ -72,6 +72,6 @@ public class CalculatorTest {
     
     @Test
     public void TwoNumbersDifferentDelimiter() {
-        assertEquals(8, Calculator.add("\\;3\n;5"));
+        assertEquals(8, Calculator.add("//;\n3;5"));
     }
 }

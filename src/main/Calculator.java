@@ -5,10 +5,16 @@ public class Calculator {
         if(text.equals(""))
             return 0;
         String[] numbers;
-        if(text.contains(";"))
-            numbers = text.replace("\n", "").replace(",", "").replace("\\", "").split(";");
-        else
-            numbers = text.replace("\n", ",").split(",");
+        String delim = ",";
+        if(text.startsWith("//")) {
+            delim = "";
+            int offset;
+            for(offset = 2; text.charAt(offset) != '\n'; offset++) {
+                delim += Character.toString(text.charAt(offset));
+            }
+            text = text.substring(offset);
+        }
+        numbers = text.replace("\n", delim).split(delim);
         String errstring = "Negatives not allowed: ";
         int errlength = errstring.length();
         int comb = 0, tmp;
