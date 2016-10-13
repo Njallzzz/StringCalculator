@@ -10,13 +10,12 @@ public class Calculator {
         int comb = 0, tmp;
         for(int i = 0; i < numbers.length; i++) {
             tmp = Integer.parseInt(numbers[i]);
-            if(tmp <= 1000 && tmp >= 0)
-                comb += tmp;
-            else if(tmp < 0) {
+            if(tmp < 0) {
                 if(errstring.length() != errlength)
                     errstring += ",";
                 errstring += tmp;
-            }
+            } else if(tmp <= 1000)
+                comb += tmp;
         }
         if(errstring.length() > errlength)
             throw new IllegalArgumentException(errstring);
